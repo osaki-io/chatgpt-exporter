@@ -500,6 +500,9 @@ npm start  # Runs server on http://localhost:3000
 - Defined content strategy (51+ programmatic pages)
 - Outlined 12-month roadmap to 10K visitors
 
+**Live URL:**
+https://osaki-io.github.io/chatgpt-exporter/
+
 **Preview URL (Local):**
 http://localhost:3000
 
