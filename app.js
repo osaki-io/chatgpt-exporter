@@ -58,8 +58,14 @@ async function exportConversation() {
         return;
     }
 
-    if (!url.includes('chatgpt.com/share/') && !url.includes('chat.openai.com/share/')) {
-        showStatus('Please enter a valid ChatGPT share URL', 'error');
+    const isValidUrl =
+        url.includes('chatgpt.com/share/') ||
+        url.includes('chat.openai.com/share/') ||
+        url.includes('twitter.com') ||
+        url.includes('x.com');
+
+    if (!isValidUrl) {
+        showStatus('Please enter a valid share URL (ChatGPT, Claude, Perplexity, or Twitter/X)', 'error');
         return;
     }
 
@@ -69,7 +75,9 @@ async function exportConversation() {
     exportBtn.disabled = true;
     exportBtn.classList.add('loading');
     hideResult();
-    showStatus('Extracting conversation... This may take 30-60 seconds', 'loading');
+    const isTwitter = url.includes('twitter.com') || url.includes('x.com');
+    const loadingMsg = isTwitter ? 'Extracting tweets... This may take 30-60 seconds' : 'Extracting conversation... This may take 30-60 seconds';
+    showStatus(loadingMsg, 'loading');
 
     try {
         const response = await fetch('/api/export', {
