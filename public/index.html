@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaveMyChat - Export AI Conversations</title>
+    <meta name="description" content="Export ChatGPT, Claude, and Perplexity conversations to PDF, Markdown, or TXT.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>SaveMyChat</h1>
+            <p class="subtitle">Export AI conversations</p>
+            <p class="subtext">ChatGPT, Claude & Perplexity → PDF, Markdown or Text</p>
+        </header>
+
+        <main class="main">
+            <div class="card">
+                <div class="input-section">
+                    <label for="url-input" class="label">Share URL</label>
+                    <input
+                        type="text"
+                        id="url-input"
+                        class="input"
+                        placeholder="https://chatgpt.com/share/..."
+                        spellcheck="false"
+                    />
+                </div>
+
+                <div class="format-section">
+                    <label class="label">Format</label>
+                    <div class="format-grid">
+                        <label class="format-card">
+                            <input type="radio" name="format" value="md" checked />
+                            <div class="format-content">
+                                <span class="format-icon">📝</span>
+                                <div class="format-text">
+                                    <span class="format-name">Markdown</span>
+                                    <span class="format-ext">.md</span>
+                                </div>
+                            </div>
+                            <div class="format-check">✓</div>
+                        </label>
+                        <label class="format-card">
+                            <input type="radio" name="format" value="txt" />
+                            <div class="format-content">
+                                <span class="format-icon">📄</span>
+                                <div class="format-text">
+                                    <span class="format-name">Text</span>
+                                    <span class="format-ext">.txt</span>
+                                </div>
+                            </div>
+                            <div class="format-check">✓</div>
+                        </label>
+                        <label class="format-card">
+                            <input type="radio" name="format" value="pdf" />
+                            <div class="format-content">
+                                <span class="format-icon">📕</span>
+                                <div class="format-text">
+                                    <span class="format-name">PDF</span>
+                                    <span class="format-ext">.pdf</span>
+                                </div>
+                            </div>
+                            <div class="format-check">✓</div>
+                        </label>
+                    </div>
+                </div>
+
+                <button id="export-btn" class="btn btn-primary">
+                    Export Conversation
+                </button>
+
+                <div id="status" class="status"></div>
+            </div>
+
+            <div id="result" class="card result-card hidden">
+                <h3 class="result-title">✓ Ready to Download</h3>
+                <div class="result-stats">
+                    <div class="stat">
+                        <span class="stat-value" id="message-count">0</span>
+                        <span class="stat-label">messages</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="file-size">-</span>
+                        <span class="stat-label">size</span>
+                    </div>
+                </div>
+                <button id="download-btn" class="btn btn-success">
+                    Download File
+                </button>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Free • No signup • Supports ChatGPT, Claude & Perplexity</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

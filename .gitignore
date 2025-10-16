@@ -1,0 +1,4 @@
+node_modules/
+chatgpt-export-*.md
+.env
+.DS_Store

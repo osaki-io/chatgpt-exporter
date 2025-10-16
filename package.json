@@ -1,0 +1,26 @@
+{
+  "name": "chatgpt-exporter",
+  "version": "1.0.0",
+  "description": "Export ChatGPT conversations to Markdown, TXT, or PDF",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "export": "node export-chatgpt-convo.js"
+  },
+  "keywords": [
+    "chatgpt",
+    "export",
+    "conversation",
+    "markdown",
+    "pdf",
+    "puppeteer"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^23.0.0",
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  }
+}
